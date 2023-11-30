@@ -4,16 +4,24 @@ const FunctionalComponent = ({ couleur }) => {
     const [color, setColor] = useState(couleur);
 
     const changeColor =() => {
-        const newColor = color === 'red' ? 'blue' : 'red';
-        setColor(newColor);
+        setColor(randomColor());
     };
+
+    function randomColor() {
+        const letters = '0123456789ABCDEF';
+        let newColor = '#';
+        for (let i = 0; i < 6; i++) {
+          newColor += letters[Math.floor(Math.random() * 16)];
+        }
+        return newColor;
+      }
 
     return (
         <div>
             <div style={{ color }}>
-                Je suis un composant
+                <p onMouseOver={changeColor}> Je suis un composant </p>
             </div>
-            <button onClick={changeColor}>Changer la couleur</button>
+            
         </div>
     )
 };
