@@ -1,5 +1,6 @@
 import logo from './chat.svg';
 import './App.css';
+import FunctionalComponent from './composant/testcolor';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <label for="mdp">Mots de passe</label>
         <input type="text" id="mdp" name="mdp" required minlength="4" maxlength="8" size="20" />
         
+        <FunctionalComponent couleur={'red'}/>
         <a
           
           className="App-link"
